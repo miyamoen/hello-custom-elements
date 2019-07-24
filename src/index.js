@@ -1,15 +1,10 @@
-class HelloWorldElement extends HTMLElement {
-  constructor() {
-    super();
-  }
-  connectedCallback() {
-    this.textContent = "Hello, World!";
-  }
-}
+import HelloWorldElement from "./HelloWorldElement";
 
-customElements.define("hello-world", HelloWorldElement);
+HelloWorldElement.setup();
 
 const app = window.Elm.Main.init({
   flags: {},
   node: document.getElementById("elm")
 });
+
+const log = e => console.log(e) && e;
