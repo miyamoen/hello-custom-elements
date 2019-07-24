@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "elm-live src/Main.elm --open --pushstate --start-page=index.html --dir=public --before-build=webpack -- --output=public/elm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miyamoen/hello-custom-elements.git"
+  },
+  "dependencies": {}
+}
