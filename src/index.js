@@ -1,6 +1,8 @@
 import HelloWorldElement from "./HelloWorldElement";
+import NonStringSelectElement from "./NonStringSelectElement";
 
 HelloWorldElement.setup();
+NonStringSelectElement.setup();
 
 const app = window.Elm.Main.init({
   flags: {},

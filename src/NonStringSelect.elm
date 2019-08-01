@@ -27,29 +27,6 @@ type alias Model =
     }
 
 
-type Goat
-    = Saanen
-    | Shiba
-    | Pygmy
-    | Angora
-
-
-goatToString : Goat -> String
-goatToString goat =
-    case goat of
-        Saanen ->
-            "ザーネン"
-
-        Shiba ->
-            "シバ"
-
-        Pygmy ->
-            "ピグミー"
-
-        Angora ->
-            "アンゴラ"
-
-
 type Msg
     = NoOp
     | Select Goat
@@ -71,21 +48,6 @@ update msg model =
     case msg of
         NoOp ->
             ( model, Cmd.none )
-
-        Select goat ->
-            ( { model | selectedGoat = Just goat }
-            , Cmd.none
-            )
-
-        Unselect ->
-            ( { model | selectedGoat = Nothing }
-            , Cmd.none
-            )
-
-        SetOptions options ->
-            ( { model | options = Debug.log "optional" options }
-            , Cmd.none
-            )
 
 
 view : Model -> Html Msg
@@ -116,13 +78,3 @@ view model =
                             )
                             model.options
             ]
-
-
-onSelect : msg -> Html.Attribute msg
-onSelect msg =
-    on "select" <| JD.succeed msg
-
-
-changeKey : String -> Html.Attribute msg
-changeKey string =
-    attribute "change-key" string
